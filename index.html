@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>MandyIn</title>
+
+    <!-- Tipografia semelhante ao protótipo -->
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=4PG2zKwr5g_9iFyIDBWuOc7Nf5FkbJdSKZoscTK320SqubGxLLvfNXY5w5Z34rTKPrKAa61_0hNH8TBkKCbzBUfF_ufzIQn0M1vUGZ87iFFGG5doanEzmkiJxrh0jjKhi-wX0RcY-PBm9fH9Nb-yJuGG_69Y5jwd60RN4JAg9EMu7qAHt78fXYmx9ybTvV0Ew8t4WnkecPBT4339Z2_Wv05JQ6mZ1MfQZAPm3_6qlXvpAbrY1TZtPLRNWPrgh5EhMPQlhMX63mcmPk3umnPxiw" charset="UTF-8"></script><script type="text/javascript" nonce="1b6824dc27a84ee38091d1e4060" src="//local.adguard.org?ts=1769614346925&amp;type=content-script&amp;dmn=cdn.discordapp.com&amp;url=https%3A%2F%2Fcdn.discordapp.com%2Fattachments%2F1231366455753441390%2F1465870504345993470%2Findex.html%3Fex%3D697b568a%26is%3D697a050a%26hm%3Db81f746f732188caf17362141fcafc61abd93da49849096dc8f519af2fe3f79a%26&amp;app=chrome.exe&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1&amp;stealth=1&amp;st-wrtc&amp;st-loc&amp;st-dnt"></script><script type="text/javascript" nonce="1b6824dc27a84ee38091d1e4060" src="//local.adguard.org?ts=1769614346925&amp;name=AdGuard%20Assistant&amp;name=AdGuard%20Extra&amp;name=AdGuard%20Popup%20Blocker&amp;type=user-script"></script><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="app" id="appRoot">
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <div class="brand">
+                <div class="brand__left">
+                    <div class="brand__name">Mandy</div>
+                    <div class="brand__badge">IN</div>
+                </div>
+
+                <!-- (Mobile) botão fechar drawer -->
+                <button class="iconBtn iconBtn--ghost sidebar__close" id="closeSidebarBtn" type="button"
+                    aria-label="Fechar painel">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M18 6L6 18M6 6l12 12" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="profileHero">
+                <div class="avatarWrap" id="avatarWrap">
+                    <img class="avatar" id="sidebarAvatar" alt="Avatar do perfil selecionado" />
+                    <button class="editPencil" id="editAvatarBtn" type="button" aria-label="Editar avatar">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 20h9" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                            <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4 11.5-11.5z" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="colorDots" aria-label="Escolher cor de destaque">
+                    <button class="dot dot--purple is-active" data-accent="purple" type="button"
+                        aria-label="Cor roxa"></button>
+                    <button class="dot dot--green" data-accent="green" type="button" aria-label="Cor verde"></button>
+                    <button class="dot dot--blue" data-accent="blue" type="button" aria-label="Cor azul"></button>
+                </div>
+
+                <div class="profileTitle">
+                    <h1 class="profileName" id="sidebarName">—</h1>
+                    <div class="counts" id="sidebarCounts">— seguidores • — seguindo</div>
+                </div>
+            </div>
+
+            <div class="profileMeta">
+                <div class="metaBlock">
+                    <div class="metaRole" id="sidebarRole">—</div>
+                    <div class="metaBio" id="sidebarBio">—</div>
+                    <div class="metaLocation" id="sidebarLocation">—</div>
+                </div>
+
+                <div class="section">
+                    <div class="sectionTitle">Endereço Profissional</div>
+                    <div class="sectionText" id="sidebarWorkAddress">—</div>
+                </div>
+
+                <div class="section">
+                    <div class="sectionTitle">Nova Conquista</div>
+                    <div class="achievement">
+                        <div class="achievement__img" id="achievementArt" aria-hidden="true">
+                            <!-- SVG decorativo simples (placeholder) -->
+                            <svg viewBox="0 0 420 170" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0" y="0" width="420" height="170" rx="16" fill="currentColor" opacity="0.08" />
+                                <circle cx="90" cy="85" r="42" fill="currentColor" opacity="0.16" />
+                                <path d="M160 120c35-55 55-80 105-80s70 25 110 80" fill="none" stroke="currentColor"
+                                    stroke-width="10" stroke-linecap="round" opacity="0.22" />
+                                <path d="M65 95l12-12 12 12" fill="none" stroke="currentColor" stroke-width="10"
+                                    stroke-linecap="round" stroke-linejoin="round" opacity="0.25" />
+                            </svg>
+                        </div>
+                        <div class="achievement__text" id="sidebarAchievementText">—</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- input file invisível -->
+            <input id="avatarFileInput" type="file" accept="image/*" hidden />
+        </aside>
+
+        <!-- BACKDROP (mobile drawer) -->
+        <div class="backdrop" id="backdrop" hidden></div>
+
+        <!-- MAIN -->
+        <main class="main">
+            <div class="topbar">
+                <div class="topbar__spacer"></div>
+
+                <!-- Toggle Claro/Escuro -->
+                <button class="themeSwitch" id="themeToggleBtn" type="button" aria-label="Alternar tema claro/escuro">
+                    <span class="themeSwitch__icons" aria-hidden="true">
+                        <svg class="tsMoon" viewBox="0 0 24 24">
+                            <path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7.5 7.5 0 1 0 21 14.5z" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+                        </svg>
+                        <svg class="tsSun" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2" />
+                            <path
+                                d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </span>
+
+                    <span class="themeSwitch__thumb" aria-hidden="true"></span>
+                </button>
+            </div>
+
+            <section class="gridWrap">
+                <div class="profilesGrid" id="profilesGrid" aria-label="Lista de perfis"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
